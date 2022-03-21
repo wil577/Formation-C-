@@ -25,6 +25,9 @@ namespace Serie_I
 
             Console.WriteLine("POW :");
             ElementaryOperations.Pow(11, 2);
+
+            Console.WriteLine("Good day :");
+            SpeakingClock.GoodDay(11);
             // Keep the console window open
             Console.WriteLine("----------------------");
             Console.WriteLine("Press any key to exit.");
