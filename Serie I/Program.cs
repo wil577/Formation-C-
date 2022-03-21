@@ -10,6 +10,7 @@ namespace Serie_I
     {
         static void Main(string[] args)
         {
+            bool isSmooth = true;
             //string saisie = Console.ReadLine();
             //int a = int.Parse(saisie);
             //char operation = Console.ReadKey().KeyChar;
@@ -28,6 +29,24 @@ namespace Serie_I
 
             Console.WriteLine("Good day :");
             SpeakingClock.GoodDay(11);
+
+            Console.WriteLine("Pyramide :");
+            Pyramid.PyramidConstruction(15, isSmooth);
+
+            Console.WriteLine("Factorial :");
+            int res1=  Factorial.Factorial_(5);
+            Console.WriteLine(res1);
+
+            Console.WriteLine("Factorial Recursive :");
+            int res2 = Factorial.FactorialRecursive(5);
+            Console.WriteLine(res2);
+
+            Console.WriteLine("Nombres premiers :");
+            PrimeNumbers.DisplayPrimes();
+
+            Console.WriteLine("algorithme d'Euclide :");
+            int res3 = Euclide.Pgcd(10,3);
+            Console.WriteLine(res3);
             // Keep the console window open
             Console.WriteLine("----------------------");
             Console.WriteLine("Press any key to exit.");
