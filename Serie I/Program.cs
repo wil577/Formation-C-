@@ -52,6 +52,7 @@ namespace Serie_I
             Console.WriteLine("algorithme d'Euclide :");
             Console.WriteLine(Euclide.PgcdRecursive(1925, 1275));
 
+
             // Keep the console window open
             Console.WriteLine("----------------------");
             Console.WriteLine("Press any key to exit.");
