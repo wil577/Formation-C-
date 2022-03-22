@@ -45,8 +45,13 @@ namespace Serie_I
             PrimeNumbers.DisplayPrimes();
 
             Console.WriteLine("algorithme d'Euclide :");
-            int res3 = Euclide.Pgcd(10,3);
+            int res3 = Euclide.Pgcd(1925,1275);
             Console.WriteLine(res3);
+
+            Console.WriteLine("");
+            Console.WriteLine("algorithme d'Euclide :");
+            Console.WriteLine(Euclide.PgcdRecursive(1925, 1275));
+
             // Keep the console window open
             Console.WriteLine("----------------------");
             Console.WriteLine("Press any key to exit.");
