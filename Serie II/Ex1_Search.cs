@@ -14,7 +14,7 @@ namespace Serie_II
             {
                 if (tableau[i] == valeur)
                     {
-                        Console.WriteLine(tableau[i]);
+                        return i;
                     }
             }
             return -1;
@@ -22,7 +22,19 @@ namespace Serie_II
 
         public static int BinarySearch(int[] tableau, int valeur)
         {
-            //TODO
+            int a = valeur / 2;
+                if(tableau[a] == valeur)
+                {
+                    return a;
+                }
+                if (tableau[a] < valeur)
+                {
+                    a = a / 2 + a;
+                }
+                if (tableau[a] > valeur)
+                {
+                    a = a / 2;
+                }
             return -1;
         }
     }
