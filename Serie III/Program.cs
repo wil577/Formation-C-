@@ -11,7 +11,10 @@ namespace Serie_III
     {
         static void Main(string[] args)
         {
+            string path = Directory.GetCurrentDirectory();
+            ClassCouncil.SchoolMeans(path + @"\table1entree.txt", path + @"\Sortie.txt");
 
+            SortingPerformance.DisplayPerformances(new List<int> { 1000, 2000, 5000, 10000 }, 10);
 
             // Keep the console window open
             Console.WriteLine("----------------------");

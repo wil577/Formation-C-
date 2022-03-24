@@ -31,37 +31,86 @@ namespace Serie_III
     {
         public static void DisplayPerformances(List<int> sizes, int count)
         {
-            //TODO
+            List<SortData> lsd = new List<SortData>();
+            lsd = PerformancesTest(sizes,count);
+
+            Console.WriteLine("n ;MeanInsertion ;StdInsertion ;MeanQuick ;StdQuick");
+            for(int i = 0; i < sizes.Count; i++)
+            {
+                //Console.WriteLine(sizes[i] + ";" + lsd[i].InsertionMean );
+                Console.WriteLine($"{sizes[i]};{lsd[i].InsertionMean};{lsd[i].InsertionStd}" );
+            }
         }
 
         public static List<SortData> PerformancesTest(List<int> sizes, int count)
         {
-            //TODO
-            return new List<SortData>();
+            List<SortData> tabList = new List<SortData>();
+            for (int i = 0; i < sizes.Count; i++)
+            {
+                tabList.Add(PerformanceTest(sizes[i], count));
+            }
+
+            return tabList;
         }
 
         public static SortData PerformanceTest(int size, int count)
         {
-            //TODO
-            return new SortData();
+            long moyenne1 = 0;
+            long moyenne2 = 0;
+            for (int i = 0; i < count; i++)
+            {
+                List<int[]> tabList = ArraysGenerator(size);
+
+                moyenne1 += UseInsertionSort(tabList[0]);
+                moyenne2 += UseQuickSort(tabList[1]);
+
+
+            }
+            moyenne1 = moyenne1 / count;
+            moyenne2 = moyenne2 / count;
+
+
+            SortData resultat = new SortData();
+            resultat.InsertionMean = moyenne1;
+            resultat.QuickMean = moyenne2;
+            return resultat;
         }
 
         private static List<int[]> ArraysGenerator(int size)
         {
-            //TODO
-            return new List<int[]>();
+            List<int[]> tabList = new List<int[]>();
+            int[] tab1 = new int[size];
+            int[] tab2 = new int[size];
+            int nb;
+            var randomNb = new Random();
+
+            for (int i = 0; i < size; i++)
+            {
+                nb = randomNb.Next(-1000, 1000);
+                tab1[i] = nb;
+                tab2[i] = nb;
+            }
+            tabList.Add(tab1);
+            tabList.Add(tab2);
+            return tabList;
         }
 
         public static long UseInsertionSort(int[] array)
         {
-            //TODO
-            return -1;
+            Stopwatch s = Stopwatch.StartNew();
+            InsertionSort(array);
+            s.Stop();
+            long tempsInsertionSort = s.ElapsedMilliseconds;
+            return tempsInsertionSort;
         }
 
         public static long UseQuickSort(int[] array)
         {
-            //TODO
-            return -1;
+            Stopwatch s = Stopwatch.StartNew();
+            QuickSort(array, 0, array.Length - 1);
+            s.Stop();
+            long tempsQuickSort = s.ElapsedMilliseconds;
+            return tempsQuickSort;
         }
 
         private static void InsertionSort(int[] array)
