@@ -51,7 +51,7 @@ namespace Serie_IV
 
         public int LettersCount(string code)
         {
-            //TODO
+            
             return -1;
         }
 
