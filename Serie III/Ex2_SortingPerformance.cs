@@ -57,6 +57,9 @@ namespace Serie_III
         {
             long moyenne1 = 0;
             long moyenne2 = 0;
+            long ET1 = 0;
+            long ET2 = 0;
+
             for (int i = 0; i < count; i++)
             {
                 List<int[]> tabList = ArraysGenerator(size);
@@ -69,10 +72,14 @@ namespace Serie_III
             moyenne1 = moyenne1 / count;
             moyenne2 = moyenne2 / count;
 
+            ET1 = moyenne1 * moyenne1 ;
+            ET2 = moyenne2 ;
 
             SortData resultat = new SortData();
             resultat.InsertionMean = moyenne1;
             resultat.QuickMean = moyenne2;
+            resultat.InsertionStd = ET1;
+            resultat.QuickStd = ET2;
             return resultat;
         }
 
